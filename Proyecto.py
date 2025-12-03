@@ -7,6 +7,7 @@ Created on Sun Oct 19 19:55:09 2025
 from bitarray import bitarray
 from bitarray.util import int2ba
 from bitarray.util import ba2int
+import difflib
 
 
 tamañoBitsCodificacion = 12
