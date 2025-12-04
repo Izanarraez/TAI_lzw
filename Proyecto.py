@@ -65,16 +65,11 @@ def codificacion():
     """
     Ejecuta el proceso de codificación LZW.
 
-    Solicita al usuario el nombre de un archivo .txt, genera la lista de 
-    códigos LZW mediante 'comprime_a_clave()', y posteriormente llama a 
+    Llama a la función 'comprime_a_clave()', y posteriormente llama a 
     la función encargada de empaquetar y guardar los datos comprimidos.
     """
-    
-    nombreArchivo = input("Introduce el nombre del archivo (sin .txt) que quieres codificar en lzw: ").strip()
-    if nombreArchivo.endswith(".txt"):
-        nombreArchivo = nombreArchivo[:-4] #Elimina la extensión si el usuario la introdujo
      
-    listaCodigos = comprime_a_clave(nombreArchivo)
+    listaCodigos = comprime_a_clave()
     if not listaCodigos:
         print("No se generaron códigos (archivo vacío o no encontrado).")
         return
@@ -254,7 +249,9 @@ def comprime_a_clave():
     
     tamanio = 256
     
-    nombreArchivo = input("introduce el nombre del archivo que quieres codificar en lzw")
+    nombreArchivo = input("Introduce el nombre del archivo que quieres codificar en lzw")
+    if nombreArchivo.endswith(".txt"):
+        nombreArchivo = nombreArchivo[:-4] #Elimina la extensión si el usuario la introdujo
     
     with open(nombreArchivo+".txt",'r',encoding="utf-8") as archivo:
     
