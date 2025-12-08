@@ -81,7 +81,7 @@ def decodificacion():
         
     nombreSalida = input("Introduce el nombre del archivo de salida (sin .txt): ").strip()
     
-    if nombreSalida == "": # Si no escribe nada, se pone un nombre automático
+    if nombreSalida == None: # Si no escribe nada, se pone un nombre automático
         nombreSalida = nombreSinExtension + "_descomprimido.txt"
     else:
         if nombreSalida.endswith(".txt"):
@@ -255,7 +255,7 @@ def comprime_a_clave():
     listaCodigos = []
     tamanio = 256
     
-    nombreArchivo = input("Introduce el nombre del archivo(sin txt) que quieres codificar en lzw:")
+    nombreArchivo = input("Introduce el nombre del archivo(sin txt) que quieres codificar en lzw: ")
     if nombreArchivo.endswith(".txt"):
         nombreArchivo = nombreArchivo[:-4]
     nombreArchivoCompleto = nombreArchivo + ".txt"
